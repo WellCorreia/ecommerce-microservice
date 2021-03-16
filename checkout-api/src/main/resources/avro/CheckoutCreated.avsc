@@ -1,7 +1,7 @@
 {
     "type": "record",
     "name": "CheckoutCreatedEvent",
-    "namespace": "com.wellington.ecommerce,checkout.event",
+    "namespace": "com.wellington.ecommerce.checkout.event",
     "fields": [
         {
             "name": "checkoutCode",

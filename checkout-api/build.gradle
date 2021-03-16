@@ -9,8 +9,17 @@ group = 'com.wellington.ecommerce'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 repositories {
 	mavenCentral()
+	maven {
+		url 'http://packages.confluent.io/maven/'
+	}
 }
 
 ext {
@@ -19,7 +28,10 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.apache.kafka:kafka-streams'
+	implementation 'io.confluent:kafka-avro-serializer:5.5.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	implementation 'org.springframework.cloud:spring-cloud-stream'
 	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka-streams'
@@ -40,7 +52,7 @@ test {
 }
 
 avro {
-	fieldVisibility ="PRIVATE"
+	fieldVisibility = "PRIVATE"
 }
 
 generateAvroJava {

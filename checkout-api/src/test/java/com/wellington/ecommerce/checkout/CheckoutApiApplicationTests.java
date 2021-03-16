@@ -1,4 +1,4 @@
-package com.wellington.ecommerce.checkoutapi;
+package com.wellington.ecommerce.checkout;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
