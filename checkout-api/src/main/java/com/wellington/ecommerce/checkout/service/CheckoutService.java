@@ -6,5 +6,5 @@ import com.wellington.ecommerce.checkout.resource.checkout.CheckoutRequest;
 import java.util.Optional;
 
 public interface CheckoutService {
-    public Optional<CheckoutEntity> create(CheckoutRequest checkoutRequest);
+    Optional<CheckoutEntity> create(CheckoutRequest checkoutRequest);
 }
