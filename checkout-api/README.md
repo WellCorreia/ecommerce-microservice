@@ -1,8 +1,8 @@
 ## Estrutura do Projeto
 
 ```
-checkou-api
-└───.mvn 
+checkout-api
+└───gradle
 └───docker
     │
     └───kafka
@@ -22,7 +22,8 @@ checkou-api
             └───CheckoutApplication.java          # Arquivo principal de execução
         └───resources
             └───avro
-                └───application.yml
+                └───CheckoutCreated.avsc          # Arquivo de configuração do avro checkout
+                └───PaymentCreated.avsc           # Arquivo de configuração do avro payment
             └───application.yml                     # Váriaveis de ambiente
             └───bootstrap.yml                     
     └───test
