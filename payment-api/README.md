@@ -2,13 +2,7 @@
 
 ```
 payment-api
-└───gradle 
-└───docker
-    │
-    └───kafka
-      │
-      └───kafkainit-topics.sh                   # Scripts do kafka
-    └───docker-compose.yml                      # Arquivo com as dependencias para os contairnes do docker
+└───gradle
 └───src
     │   
     └───main
