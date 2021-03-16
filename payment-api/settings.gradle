@@ -9,4 +9,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'checkout-api'
+rootProject.name = 'payment-api'
