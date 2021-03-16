@@ -1,8 +1,8 @@
 plugins {
-	id 'com.commercehub.gradle.plugin.avro' version '0.99.99'
-	id 'org.springframework.boot' version '2.4.3'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'com.commercehub.gradle.plugin.avro' version '0.99.99'
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 group = 'com.wellington.ecommerce'
@@ -10,51 +10,51 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
-	maven {
-		url 'http://packages.confluent.io/maven/'
-	}
+    mavenCentral()
+    maven {
+        url 'http://packages.confluent.io/maven/'
+    }
 }
 
 ext {
-	set('springCloudVersion', "2020.0.1")
+    set('springCloudVersion', "2020.0.1")
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.apache.kafka:kafka-streams'
-	implementation 'io.confluent:kafka-avro-serializer:5.5.0'
-	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
-	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
-	implementation 'org.springframework.cloud:spring-cloud-stream'
-	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka-streams'
-	runtimeOnly 'org.postgresql:postgresql'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor('org.projectlombok:lombok')
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.apache.kafka:kafka-streams'
+    implementation 'io.confluent:kafka-avro-serializer:5.5.0'
+    implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    implementation 'org.springframework.cloud:spring-cloud-stream'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka-streams'
+    runtimeOnly 'org.postgresql:postgresql'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 avro {
-	fieldVisibility = "PRIVATE"
+    fieldVisibility = "PRIVATE"
 }
 
 generateAvroJava {
-	source 'src/main/resources/avro'
+    source 'src/main/resources/avro'
 }

@@ -11,9 +11,18 @@ import javax.persistence.*;
 public class CheckoutEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String code;
+
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
+
+    public enum Status {
+        CREATED,
+        APPROVED
+    }
 }
